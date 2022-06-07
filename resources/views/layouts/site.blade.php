@@ -33,7 +33,7 @@
     <div class="2xl:max-w-screen-xl xl:max-w-screen-lgz mx-auto bg">
         <div class="lg:container mx-auto min-h-screen">
             <header>
-                @include('parts.site.menu')      
+                @include('site.includes.menu')      
             </header>
         
 

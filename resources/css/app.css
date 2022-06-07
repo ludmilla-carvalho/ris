@@ -33,6 +33,12 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
     font-style: normal;
 
 }
+.without-ring {
+    @apply focus:ring-0 focus:ring-offset-0 outline-0;
+  }
+
+
+
 
 /* SITE */
 .bd{

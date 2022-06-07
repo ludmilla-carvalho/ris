@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('site.home');
-});
+})->name('home');
 
 Route::get('/w', function () {
     return view('welcome');
@@ -33,6 +33,8 @@ Route::prefix('admin')->name('admin.')->middleware([
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    Route::get('places', \App\Http\Livewire\Place\Index::class)->name('places');
 });
 
 
