@@ -1,6 +1,6 @@
 <x-admin-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-orange-500 text-xl leading-tight">
+        <h2 class="font-semibold text-orange-500 text-2xl leading-tight">
             {{ __('Profile') }}
         </h2>
     </x-slot>

@@ -14,7 +14,7 @@
                             {{-- old placeholder {{__('Search in')}} {{ $this->searchableColumns()->map->label->join(', ') }} --}}
                             <input wire:model.debounce.500ms="search" class="block w-full py-3 pl-10 text-sm border-gray-300 leading-4 rounded-md shadow-sm focus:border-orange-300 without-ring" placeholder="Busca" type="text" />
                             <div class="absolute inset-y-0 right-0 flex items-center pr-2">
-                                <button wire:click="$set('search', null)" class="text-gray-300 hover:text-red-600 focus:outline-none">
+                                <button wire:click="$set('search', null)" class="text-gray-300 hover:text-orange-500 focus:outline-none">
                                     <x-icons.x-circle class="w-5 h-5 stroke-current" />
                                 </button>
                             </div>
@@ -24,14 +24,14 @@
             </div>
 
             @if($this->activeFilters)
-                <span class="text-xl text-blue-400 uppercase">@lang('Filter active')</span>
+                <span class="text-xl text-orange-500 uppercase">FILTRO ATIVO</span>
             @endif
 
             <div class="flex flex-wrap items-center space-x-1">
                 <x-icons.cog wire:loading class="text-gray-400 h-9 w-9 animate-spin" />
 
                 @if($this->activeFilters)
-                    <button wire:click="clearAllFilters" class="flex items-center px-3 text-xs font-medium tracking-wider text-red-500 uppercase bg-white border border-red-400 space-x-2 rounded-md leading-4 hover:bg-red-200 focus:outline-none"><span>{{ __('Reset') }}</span>
+                    <button wire:click="clearAllFilters" class="flex items-center px-3 text-xs font-bold tracking-wider text-orange-500 hover:text-orange-400 uppercase bg-white border border-orange-500 hover:border-orange-400 space-x-2 rounded-md leading-4 focus:outline-none"><span>Remover Filtro</span>
                         <x-icons.x-circle class="m-2" />
                     </button>
                 @endif
@@ -72,15 +72,10 @@
                 @endif
                 {{-- Adicionar --}}
                 <div>
-                    <x-admin.modal :value="$comp" :name="$name">
-                        <x-slot name="trigger">
-                            <button class="flex items-center px-3 text-xs font-bold tracking-wider text-white uppercase bg-emerald-500 border border-emerald-500 space-x-2 rounded-md leading-4 hover:bg-white hover:text-emerald-500 focus:outline-none">
-                                <span>Novo {{ $name }}</span>
-                                <svg class="h-5 w-5 stroke-current m-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
-                            </button>
-                        </x-slot>
-                        @livewire($comp . '.create')
-                    </x-admin.modal>
+                    <button class="flex items-center px-3 text-xs font-bold tracking-wider text-white uppercase bg-emerald-500 border border-emerald-500 space-x-2 rounded-md leading-4 hover:bg-white hover:text-emerald-500 focus:outline-none" wire:click.prevent="$emitTo('place.create', 'new')" wire:model="open = true">
+                        <span>Novo {{ $name }}</span>
+                        <svg class="h-5 w-5 stroke-current m-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+                    </button>
                 </div>
 
                 @if($hideable === 'select')
@@ -110,7 +105,7 @@
             </div>
         @endif
 
-        <div wire:loading.class="opacity-50" class="rounded-lg mt-8 @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg bg-white max-w-screen overflow-x-scroll border-2 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) rounded-b-none border-b-0 @endif">
+        <div wire:loading.class="opacity-50" class="rounded-lg mt-8 @unless($complex || $this->hidePagination) rounded-b-none @endunless shadow-lg bg-white max-w-screen overflow-x-scroll border-2 @if($this->activeFilters) border-orange-500 @else border-transparent @endif @if($complex) rounded-b-none border-b-0 @endif">
             <div>
                 <div class="table min-w-full align-middle">
                     @unless($this->hideHeader)
@@ -132,7 +127,7 @@
                             @endforeach
                         </div>
                     @endunless
-                    <div class="table-row bg-blue-100 divide-x divide-blue-200">
+                    <div class="table-row bg-orange-100 divide-x divide-orange-200">
                         @foreach($this->columns as $index => $column)
                             @if($column['hidden'])
                                 @if($hideable === 'inline')
@@ -207,7 +202,7 @@
         </div>
 
         @unless($this->hidePagination)
-            <div class="max-w-screen bg-white @unless($complex) rounded-b-lg @endunless border-4 border-t-0 border-b-0 @if($this->activeFilters) border-blue-500 @else border-transparent @endif">
+            <div class="max-w-screen bg-white @unless($complex) rounded-b-lg @endunless border-4 border-t-0 border-b-0 @if($this->activeFilters) border-transparent @else border-transparent @endif">
                 <div class="items-center justify-between p-2 sm:flex">
                     {{-- check if there is any data --}}
                     @if(count($this->results))
@@ -241,7 +236,7 @@
     </div>
 
     @if($complex)
-        <div class="bg-gray-50 px-4 py-4 rounded-b-lg rounded-t-none shadow-lg border-2 @if($this->activeFilters) border-blue-500 @else border-transparent @endif @if($complex) border-t-0 @endif">
+        <div class="bg-gray-50 px-4 py-4 rounded-b-lg rounded-t-none shadow-lg border-2 @if($this->activeFilters) border-orange-500 @else border-transparent @endif @if($complex) border-t-0 @endif">
             <livewire:complex-query :columns="$this->complexColumns" :persistKey="$this->persistKey" :savedQueries="method_exists($this, 'getSavedQueries') ? $this->getSavedQueries() : null" />
         </div>
     @endif

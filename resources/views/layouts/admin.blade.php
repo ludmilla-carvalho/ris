@@ -18,6 +18,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        @stack('styles')
         @livewireStyles
 
         <!-- Scripts -->
@@ -30,8 +31,6 @@
             @include('admin.includes.navigation-menu')
 
             <div class="flex flex-wrap lg:mx-8">
-                {{-- Aside nav --}}
-                {{-- <aside class="min-h-screen hidden lg:flex w-full lg:w-2/12 overflow-y-auto rounded-md ring-1 ring-black ring-opacity-5 px-8 py-4 my-4 bg-white text-gray-700">aside</aside> --}}
                 @include('admin.includes.menu')
 
                 <div class="w-full lg:w-10/12 p-4">
@@ -55,7 +54,7 @@
         </div>
 
         @stack('modals')
-
+        @stack('scripts')
         @livewireScripts
     </body>
 </html>

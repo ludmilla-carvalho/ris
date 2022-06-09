@@ -8,11 +8,14 @@ $maxWidth = 'sm:max-w-2xl';
 //     'xl' => 'sm:max-w-xl',
 //     '2xl' => 'sm:max-w-2xl',
 // ][$maxWidth ?? '2xl'];
-@endphp
 
+
+//open: {{ isset($open) && $open ? 'true' : 'false' }}, 
+@endphp
+<div>
 <div 
     x-data="{ 
-        open: {{ isset($open) && $open ? 'true' : 'false' }}, 
+        open: @entangle($attributes->wire('model')), 
         working: false ,
         focusables() {
             // All focusable element types...
@@ -28,18 +31,19 @@ $maxWidth = 'sm:max-w-2xl';
         prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
         nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
         prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 }
-    }" 
+    }"
+    {{-- x-init="open = false" --}}
     x-on:close.stop="open = false"
     x-on:keydown.escape.window="open = false"
     x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
     x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
     x-cloak wire:key="add-{{ $value }}"
 >
-    <span x-on:click="open = true">
+    {{-- <span x-on:click="open = true">
         {{ $trigger }}
-    </span>
+    </span> --}}
 
-    <div x-show="open" class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50">
+    <div x-show="open" class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50" style="display: none">
         
         <div x-show="open" class="fixed inset-0 transform transition-all" 
             x-on:click="open = false" 
@@ -59,27 +63,9 @@ $maxWidth = 'sm:max-w-2xl';
         x-transition:leave="ease-in duration-200"
         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-
-            <div class="px-6 py-4">
-                <div class="text-lg text-gray-900">
-                    Adicionar {{ isset($name) ? $name : '' }} 
-                </div>
-        
-                <div class="mt-4 text-gray-600 text-lg">
-                    {{ $slot }}
-                </div>
-            </div>
-        
-            <div class="flex flex-row justify-end px-6 py-4 bg-gray-100 text-right">
-                <x-jet-secondary-button x-on:click="open = false" x-bind:disabled="working">
-                    {{ __('No') }}
-                </x-jet-secondary-button>
-
-                <x-jet-button class="ml-3" wire:click="delete({{ $value }})">
-                    {{ __('Yes') }}
-                </x-jet-button>
-            </div>
-
+            {{-- Content --}}
+            {{ $slot }}
         </div>
     </div>
+</div>
 </div>

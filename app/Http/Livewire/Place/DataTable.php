@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Place;
 
 use App\Models\Place;
+use App\Models\Region;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\NumberColumn;
@@ -12,8 +13,16 @@ class DataTable extends LivewireDatatable
 {
     public $model = Place::class;
     public $name = "Local";
-    //public $cNamePl = "Locais";
     public $comp = 'place';
+
+    //public $complex = true;
+
+    protected $listeners = ['refreshPlace' => 'refreshTable'];
+
+    // public function builder()
+    // {
+    //     return Place::query()->leftJoin('region');
+    // }
 
     public function columns()
     {
@@ -23,18 +32,16 @@ class DataTable extends LivewireDatatable
                 ->defaultSort('asc')
                 ->sortBy('id'),
 
-            Column::name('region')
-                ->label('Região'),
+            Column::name('region.title')
+                ->label('Região')
+                ->filterable($this->regions),
 
-            Column::callback(['place'], function ($place) {
-                return "<span class='font-bold'>$place</span>";
+            Column::callback(['title'], function ($title) {
+                return "<span class='font-bold'>$title</span>";
             })
                 ->label('Local')
-                ->searchable(),
-
-            // Column::name('place')
-            //     ->label('Local')
-            //     ->searchable(),
+                ->searchable()
+                ->filterable(),
 
             Column::name('services')
                 ->label('Serviços')
@@ -43,9 +50,19 @@ class DataTable extends LivewireDatatable
             DateColumn::name('created_at')
                 ->label('Criado em'),
 
-            Column::callback(['id', 'place'], function ($id, $place) {
-                return view('admin.places.table-actions', ['id' => $id, 'place' => $place]);
+            Column::callback(['id', 'title'], function ($id, $title) {
+                return view('admin.places.table-actions', ['id' => $id, 'title' => $title]);
             })->unsortable()->label('Ações')
         ];
+    }
+
+    public function getRegionsProperty()
+    {
+        return Region::pluck('title');
+    }
+
+    public function refreshTable()
+    {
+        $this->refreshLivewireDatatable();
     }
 }

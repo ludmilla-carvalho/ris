@@ -39,7 +39,7 @@ $maxWidth = 'sm:max-w-2xl';
         <button class="p-1 text-red-600 rounded hover:bg-red-600 hover:text-white"><x-icons.trash /></button>
     </span>
 
-    <div x-show="open" class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50">
+    <div x-show="open" class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50" style="display: none">
         
         <div x-show="open" class="fixed inset-0 transform transition-all" 
             x-on:click="open = false" 
@@ -62,11 +62,11 @@ $maxWidth = 'sm:max-w-2xl';
 
             <div class="px-6 py-4">
                 <div class="text-lg text-gray-900">
-                    {{ __('Delete') }} #{{ $value }} {{ $place }}
+                    {{ __('Delete') }} #{{ $value }} {{ $title }}
                 </div>
         
                 <div class="mt-4 text-gray-600 text-lg">
-                    Deseja mesmo excluir o registro {{ $place }}?
+                    Deseja mesmo excluir o registro {{ $title }}?
                 </div>
             </div>
         
