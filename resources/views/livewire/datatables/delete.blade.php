@@ -62,11 +62,11 @@ $maxWidth = 'sm:max-w-2xl';
 
             <div class="px-6 py-4">
                 <div class="text-lg text-gray-900">
-                    {{ __('Delete') }} #{{ $value }} {{ $title }}
+                    {{ __('Delete') }} #{{ $value }}
                 </div>
         
                 <div class="mt-4 text-gray-600 text-lg">
-                    Deseja mesmo excluir o registro {{ $title }}?
+                    Deseja mesmo excluir o registro <b>{{ $item }}</b>?
                 </div>
             </div>
         

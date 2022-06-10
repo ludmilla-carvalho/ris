@@ -9,7 +9,7 @@
             <div class="px-6 pt-4 pb-8">
                 <div class="grid grid-cols-6 gap-6">
                     {{-- fields --}}
-                    @include('admin.places.form', ['place' => $place, 'regions' => $regions, 'action' => 'create'])
+                    @include('admin.users.form', ['user' => $user, 'action' => 'create'])
                 </div>
             </div>
 

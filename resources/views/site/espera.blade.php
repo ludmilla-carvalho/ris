@@ -31,16 +31,13 @@
 
 
     <div class="2xl:max-w-screen-xl xl:max-w-screen-lg mx-auto">
-        <div class="lg:container mx-auto min-h-screen">
-            <header>
-                @include('site.includes.menu')      
-            </header>
-        
+        <div class="lg:container mx-auto min-h-screen flex justify-center">
+            <img src="{{ asset('images/logos/risadaria.svg') }}" alt="Risadaria" class="">
 
-            <!-- Page Content -->
-            <main class="px-6 md:px-4">
-                {{ $slot }}
-            </main>
+
+            {{-- <div class="mx-auto pb-10x flex justify-center">
+                <img src="{{ asset('images/logos/risadaria.svg') }}" alt="Risadaria" class="">
+            </div> --}}
         </div>
     </div>
 

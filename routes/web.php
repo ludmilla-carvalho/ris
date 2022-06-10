@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
+    return view('site.espera');
+})->name('espera');
+
+Route::get('/home', function () {
     return view('site.home');
 })->name('home');
 
@@ -45,6 +49,7 @@ Route::prefix('admin')->name('admin.')->middleware([
     })->name('dashboard');
 
     Route::get('places', \App\Http\Livewire\Place\Index::class)->name('places');
+    Route::get('users', \App\Http\Livewire\User\Index::class)->name('users');
 });
 
 

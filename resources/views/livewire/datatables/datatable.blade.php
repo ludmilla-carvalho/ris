@@ -72,7 +72,7 @@
                 @endif
                 {{-- Adicionar --}}
                 <div>
-                    <button class="flex items-center px-3 text-xs font-bold tracking-wider text-white uppercase bg-emerald-500 border border-emerald-500 space-x-2 rounded-md leading-4 hover:bg-white hover:text-emerald-500 focus:outline-none" wire:click.prevent="$emitTo('place.create', 'new')" wire:model="open = true">
+                    <button class="flex items-center px-3 text-xs font-bold tracking-wider text-white uppercase bg-emerald-500 border border-emerald-500 space-x-2 rounded-md leading-4 hover:bg-white hover:text-emerald-500 focus:outline-none" wire:click.prevent="$emitTo('{{ $comp }}.create', 'new')" wire:model="open = true">
                         <span>Novo {{ $name }}</span>
                         <svg class="h-5 w-5 stroke-current m-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
                     </button>

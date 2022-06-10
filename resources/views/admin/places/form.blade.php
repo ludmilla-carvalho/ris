@@ -1,7 +1,7 @@
 <!-- place -->
 <div class="col-span-6">
     <x-jet-label for="place.title" value="Local" />
-    <x-jet-input id="{{ $action }}_place.place" type="text" class="mt-1 block w-full" wire:model="place.title" />
+    <x-jet-input id="{{ $action }}_place.title" type="text" class="mt-1 block w-full" wire:model="place.title" />
     <x-jet-input-error for="place.title" class="mt-2" />
 </div>
 
