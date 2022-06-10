@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('site.home');
 })->name('home');
 
+Route::get('/sobre-o-festival', function () {
+    return view('site.sobre');
+})->name('sobre');
+
+Route::get('/contato', function () {
+    return view('site.contato');
+})->name('contato');
+
+
+
 Route::get('/w', function () {
     return view('welcome');
 });

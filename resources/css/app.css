@@ -52,13 +52,14 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
     /* height: 2000px; */
 }
 #logo{
-    width:235px;
+    width:180px;
 }
 /* Menu */
 #menu-button{
     filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(321deg) brightness(110%) contrast(110%);
     /*
     Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element
+    https://codepen.io/sosuke/pen/Pjoqqp
     */
 }
 #menu .parallelogram {
@@ -66,6 +67,12 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
 }
 #menu .parallelogram .txt {
     display: inline-block;
+}
+.icon-envelope{
+    filter: invert(48%) sepia(71%) saturate(1407%) hue-rotate(296deg) brightness(99%) contrast(104%);
+}
+.icon-phone{
+    filter: invert(69%) sepia(82%) saturate(6732%) hue-rotate(126deg) brightness(104%) contrast(101%);
 }
 
 /* Home */
@@ -85,7 +92,11 @@ xl	1280px	@media (min-width: 1280px) { ... }
 */
 
 
-
+@media (min-width: 640px) {
+    #logo{
+        width:235px;
+    }
+}
 
 
 @media (min-width: 1024px) {

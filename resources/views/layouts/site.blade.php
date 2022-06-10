@@ -30,17 +30,17 @@
 <body class="font-prx antialiased bd">
 
 
-    <div class="2xl:max-w-screen-xl xl:max-w-screen-lgz mx-auto bg">
-        <div class="lg:container mx-auto min-h-screen">
+    <div class="2xl:max-w-screen-xl xl:max-w-screen-lg mx-auto">
+        <div class="lg:container mx-auto zmin-h-screen">
             <header>
                 @include('site.includes.menu')      
             </header>
         
 
-        <!-- Page Content -->
-        <main class="">
-            {{ $slot }}
-        </main>
+            <!-- Page Content -->
+            <main class="px-6 md:px-4">
+                {{ $slot }}
+            </main>
         </div>
     </div>
 
