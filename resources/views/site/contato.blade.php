@@ -64,7 +64,3 @@
         </span>
     </div>
 </x-site-layout>
-
-
-
-Entre os dias 5 e 14 de julho, o shopping Tietê receberá atrações do Risadaria. O local servirá de palco para  apresentações gratuitas dos grandes nomes do humor. Duração aproximada: 25 minutos Classificação indicativa: 16 anos.
