@@ -29,20 +29,20 @@
             </div>
             <div class="carousel-item relative float-left w-full">
                 <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="hidden lg:block w-full" alt="..."/>4
-                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="block lg:hidden w-full" alt="..."/>
+                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="hidden lg:block w-full" alt="..."/>
+                    <img src="{{ asset('images/home/Supershows_1_m.png') }}" class="block lg:hidden w-full" alt="..."/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
                 <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
                     <img src="{{ asset('images/home/AQUELA-DUPLA.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/AQUELA-DUPLA.png') }}" class="block lg:hidden w-full" alt="..."/>
+                    <img src="{{ asset('images/home/AQUELA-DUPLA_m.png') }}" class="block lg:hidden w-full" alt="..."/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
                 <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
                     <img src="{{ asset('images/home/BAD-TRIP.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/BAD-TRIP.png') }}" class="block lg:hidden w-full" alt="..."/>
+                    <img src="{{ asset('images/home/BAD-TRIP_m.png') }}" class="block lg:hidden w-full" alt="..."/>
                 </a>
             </div>
         </div>
