@@ -12,6 +12,7 @@
     <x-jet-input-error for="place.region_id" class="mt-2" />
 </div>
 
+{{-- https://quilljs.com/docs/modules/toolbar/ --}}
 <!-- place.services -->
 <div class="col-span-6">
     <x-jet-label for="place.services" value="Serviço" />
@@ -21,7 +22,17 @@
             x-data
             x-ref="quillEditor"
             x-init="
-            quill = new Quill($refs.quillEditor, {theme: 'snow'});
+            quill = new Quill($refs.quillEditor, {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['link'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['clean'] 
+                    ]
+                  },
+            });
             quill.on('text-change', function () {
                 $dispatch('quill-input', quill.root.innerHTML);
             });

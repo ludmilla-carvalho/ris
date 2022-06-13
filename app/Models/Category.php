@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Region extends Model
+class Category extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,11 +12,11 @@ class Region extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'active'
+        'name', 'slug',
     ];
 
-    public function places()
-    {
-        return $this->hasMany('App\Models\Place')->orderBy('title', 'ASC');
-    }
+    // public function places()
+    // {
+    //     return $this->hasMany('App\Models\Agenda')->orderBy('title', 'ASC');
+    // }
 }

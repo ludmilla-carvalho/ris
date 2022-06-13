@@ -49,6 +49,8 @@ Route::prefix('admin')->name('admin.')->middleware([
     })->name('dashboard');
 
     Route::get('places', \App\Http\Livewire\Place\Index::class)->name('places');
+    Route::get('regions', \App\Http\Livewire\Region\Index::class)->name('regions');
+
     Route::get('users', \App\Http\Livewire\User\Index::class)->name('users');
 });
 
