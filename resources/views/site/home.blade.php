@@ -28,8 +28,8 @@
             </div>
             <div class="carousel-item relative float-left w-full">
                 <a href="https://bileto.sympla.com.br/event/74355/d/144944/s/947897" target="_blank">
-                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="hidden lg:block w-full" alt="Risadaria Supershow"/>
-                    <img src="{{ asset('images/home/Supershows_1_m.png') }}" class="block lg:hidden w-full" alt="Risadaria Supershow"/>
+                    <img src="{{ asset('images/home/Supershows_2.png') }}" class="hidden lg:block w-full" alt="Risadaria Supershow"/>
+                    <img src="{{ asset('images/home/Supershows_2_m.png') }}" class="block lg:hidden w-full" alt="Risadaria Supershow"/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
