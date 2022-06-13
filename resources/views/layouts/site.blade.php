@@ -48,12 +48,12 @@
         <footer class="bg-white relative min-h-[5vh]">
             <img src="{{ asset('images/patrocinadores.png') }}" alt="Patrocinadores" class="w-full" >
             {{-- https://zaneray.com/responsive-image-map/ --}}
-            <a href="https://www.usiminas.com/" title="Usiminas" style="position: absolute; left: 12.62%; top: 48.94%; width: 15.07%; height: 27.84%; z-index: 9001;"></a>
-            <a href="https://www.mundobic.com.br/depto/barbear/barbeadores" title="Bic Confort 3" style="position: absolute; left: 28.59%; top: 48.4%; width: 9.86%; height: 27.84%; z-index: 9002;"></a>
-            <a href="https://www.razzo.com.br/" title="Razzo" style="position: absolute; left: 40.75%; top: 48.4%; width: 6.4%; height: 27.84%; z-index: 9003;"></a>
-            <a href="https://www.aeroglos.com.br/" title="Aeroglós" style="position: absolute; left: 48.11%; top: 49.82%; width: 6.63%; height: 27.84%; z-index: 9004;"></a>
-            <a href="https://www.uol.com.br/" title="UOL" style="position: absolute; left: 56.24%; top: 50.71%; width: 5.21%; height: 27.84%; z-index: 9005;"></a>
-            <a href="https://www.band.uol.com.br/bandnews-fm" title="Band News FM" style="position: absolute; left: 62.2%; top: 50.53%; width: 4.42%; height: 27.84%; z-index: 9005;"></a>
+            <a href="https://www.usiminas.com/" title="Usiminas" style="position: absolute; left: 12.62%; top: 48.94%; width: 15.07%; height: 27.84%; z-index: 9001;" target="_blank"></a>
+            <a href="https://www.mundobic.com.br/depto/barbear/barbeadores" title="Bic Confort 3" style="position: absolute; left: 28.59%; top: 48.4%; width: 9.86%; height: 27.84%; z-index: 9002;" target="_blank"></a>
+            <a href="https://www.razzo.com.br/" title="Razzo" style="position: absolute; left: 40.75%; top: 48.4%; width: 6.4%; height: 27.84%; z-index: 9003;" target="_blank"></a>
+            <a href="https://www.aeroglos.com.br/" title="Aeroglós" style="position: absolute; left: 48.11%; top: 49.82%; width: 6.63%; height: 27.84%; z-index: 9004;" target="_blank"></a>
+            <a href="https://www.uol.com.br/" title="UOL" style="position: absolute; left: 56.24%; top: 50.71%; width: 5.21%; height: 27.84%; z-index: 9005;" target="_blank"></a>
+            <a href="https://www.band.uol.com.br/bandnews-fm" title="Band News FM" style="position: absolute; left: 62.2%; top: 50.53%; width: 4.42%; height: 27.84%; z-index: 9005;" target="_blank"></a>
         </footer>
       {{-- </body> --}}
 
