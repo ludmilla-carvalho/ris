@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <footer class="bg-white bottom-0 min-h-[5vh]">
+        <footer class="bg-white relative min-h-[5vh]">
             <img src="{{ asset('images/patrocinadores.png') }}" alt="Patrocinadores" class="w-full" >
             {{-- https://zaneray.com/responsive-image-map/ --}}
             <a href="https://www.usiminas.com/" title="Usiminas" style="position: absolute; left: 12.62%; top: 48.94%; width: 15.07%; height: 27.84%; z-index: 9001;"></a>
