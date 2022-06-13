@@ -7,13 +7,12 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            {{-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
         </div>
         <div class="carousel-inner relative w-full overflow-hidden">
             <div class="carousel-item active relative float-left w-full">
-                <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/Supershows.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/Supershows_m.png') }}" class="block lg:hidden w-full" alt="..."/>
+                <a href="https://bileto.sympla.com.br/event/74354/d/144943" target="_blank">
+                    <img src="{{ asset('images/home/Supershows.png') }}" class="hidden lg:block w-full" alt="Risadaria Supershow"/>
+                    <img src="{{ asset('images/home/Supershows_m.png') }}" class="block lg:hidden w-full" alt="Risadaria Supershow"/>
                 </a>
                 {{-- <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="block w-full" alt="..."/> --}}
                 {{-- <div class="carousel-caption hidden md:block absolute text-center">
@@ -22,27 +21,27 @@
                 </div> --}}
             </div>
             <div class="carousel-item relative float-left w-full">
-                <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/KAMBALACHO.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/KAMBALACHO_m.png') }}" class="block lg:hidden w-full" alt="..."/>
+                <a href="https://bileto.sympla.com.br/event/73368/d/138921/s/890886" target="_blank">
+                    <img src="{{ asset('images/home/KAMBALACHO.png') }}" class="hidden lg:block w-full" alt="Kambalacho"/>
+                    <img src="{{ asset('images/home/KAMBALACHO_m.png') }}" class="block lg:hidden w-full" alt="Kambalacho"/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
-                <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/Supershows_1_m.png') }}" class="block lg:hidden w-full" alt="..."/>
+                <a href="https://bileto.sympla.com.br/event/74355/d/144944/s/947897" target="_blank">
+                    <img src="{{ asset('images/home/Supershows_1.png') }}" class="hidden lg:block w-full" alt="Risadaria Supershow"/>
+                    <img src="{{ asset('images/home/Supershows_1_m.png') }}" class="block lg:hidden w-full" alt="Risadaria Supershow"/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
-                <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/AQUELA-DUPLA.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/AQUELA-DUPLA_m.png') }}" class="block lg:hidden w-full" alt="..."/>
+                <a href="https://bileto.sympla.com.br/event/71735/d/144946/s/947903" target="_blank">
+                    <img src="{{ asset('images/home/AQUELA-DUPLA.png') }}" class="hidden lg:block w-full" alt="Aquela Dupla"/>
+                    <img src="{{ asset('images/home/AQUELA-DUPLA_m.png') }}" class="block lg:hidden w-full" alt="Aquela Dupla"/>
                 </a>
             </div>
             <div class="carousel-item relative float-left w-full">
-                <a href="https://www.sympla.com.br/eventos?s=risadaria&tab=eventos" target="_blank">
-                    <img src="{{ asset('images/home/BAD-TRIP.png') }}" class="hidden lg:block w-full" alt="..."/>
-                    <img src="{{ asset('images/home/BAD-TRIP_m.png') }}" class="block lg:hidden w-full" alt="..."/>
+                <a href="https://bileto.sympla.com.br/event/69674/d/144945" target="_blank">
+                    <img src="{{ asset('images/home/BAD-TRIP.png') }}" class="hidden lg:block w-full" alt="Bad Trip"/>
+                    <img src="{{ asset('images/home/BAD-TRIP_m.png') }}" class="block lg:hidden w-full" alt="Bad Trip"/>
                 </a>
             </div>
         </div>
