@@ -57,7 +57,6 @@ class Edit extends Component
             $this->region->active = 1;
         }
         $this->region->save();
-        //$this->emitUp('refreshRegion');
         $this->emit('refreshRegion');
     }
 

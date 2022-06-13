@@ -44,3 +44,9 @@
         <x-jet-input-error for="place.services" class="mt-2" />
     </div>
 </div>
+
+<div class="col-span-6">
+    <x-jet-checkbox id="place.active" name="place.active" wire:model.deffer="place.active"/>
+    <span class="ml-1 text-sm">Ativo</span>
+    <p class="text-xs">Exibe na busca da programação</p>
+</div>

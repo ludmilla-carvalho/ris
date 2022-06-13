@@ -17,6 +17,7 @@ class Edit extends Component
 
     protected $listeners = [
         'show' => 'show',
+        'toogleActive' => 'toogleActive',
     ];
 
     protected function rules()
@@ -25,6 +26,7 @@ class Edit extends Component
             'place.title' => 'required|string|min:3|max:255|unique:places,title,' . $this->place->id,
             'place.region_id' => 'required',
             'place.services' => 'required',
+            'place.active' => 'nullable',
         ];
     }
 
@@ -32,6 +34,7 @@ class Edit extends Component
         'place.title' => 'local',
         'place.region_id' => 'região',
         'place.service' => 'serviço',
+        'place.active' => 'ativo',
     ];
 
     public function mount()
@@ -56,6 +59,19 @@ class Edit extends Component
         $this->place = Place::find($id);
         $this->open = true;
     }
+
+    public function toogleActive($id)
+    {
+        $this->place = Place::find($id);
+        if ($this->place->active == 1) {
+            $this->place->active = 0;
+        } else {
+            $this->place->active = 1;
+        }
+        $this->place->save();
+        $this->emit('refreshPlace');
+    }
+
 
     public function save()
     {

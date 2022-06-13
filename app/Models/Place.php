@@ -12,7 +12,7 @@ class Place extends Model
      * @var array
      */
     protected $fillable = [
-        'region', 'place', 'services',
+        'region', 'place', 'services', 'active'
     ];
 
     public function region()

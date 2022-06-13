@@ -46,6 +46,10 @@ class DataTable extends LivewireDatatable
                 ->label('Serviços')
                 ->unsortable(),
 
+            Column::callback(['id', 'active'], function ($id, $active) {
+                return view('admin.places.table-active', ['id' => $id, 'active' => $active]);
+            })->unsortable()->label('Ativo'),
+
             DateColumn::name('created_at')
                 ->label('Criado em'),
 

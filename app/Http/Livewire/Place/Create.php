@@ -22,12 +22,14 @@ class Create extends Component
         'place.title' => 'required|string|min:3|max:255|unique:places,title,null',
         'place.region_id' => 'required',
         'place.services' => 'required',
+        'place.active' => 'nullable',
     ];
 
     protected $validationAttributes = [
         'place.title' => 'local',
         'place.region_id' => 'região',
         'place.service' => 'serviço',
+        'place.active' => 'ativo',
     ];
 
     public function mount()
