@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('site.espera');
-})->name('espera');
+// Route::get('/', function () {
+//     return view('site.espera');
+// })->name('espera');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('site.home');
 })->name('home');
 

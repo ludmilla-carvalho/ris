@@ -2742,6 +2742,12 @@ select {
 .min-h-screen {
   min-height: 100vh;
 }
+.min-h-\[95vh\] {
+  min-height: 95vh;
+}
+.min-h-\[5vh\] {
+  min-height: 5vh;
+}
 .min-h-\[28px\] {
   min-height: 28px;
 }
