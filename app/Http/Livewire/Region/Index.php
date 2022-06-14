@@ -6,7 +6,6 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $val = 'add';
     public $open = false;
     public function render()
     {

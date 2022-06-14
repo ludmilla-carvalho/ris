@@ -39,7 +39,7 @@ class DataTable extends LivewireDatatable
             Column::callback(['title'], function ($title) {
                 return "<span class='font-bold'>$title</span>";
             })
-                ->label('Local')
+                 ->label('Local')
                 ->searchable(),
 
             Column::name('services')
