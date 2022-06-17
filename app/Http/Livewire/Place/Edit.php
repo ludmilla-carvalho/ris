@@ -40,7 +40,7 @@ class Edit extends Component
     public function mount()
     {
         $this->place = new Place();
-        $this->regions = $this->getRegionsProperty();
+        $this->regions = $this->getRegions();
     }
 
     public function updated($propertyName)
@@ -48,9 +48,9 @@ class Edit extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function getRegionsProperty()
+    public function getRegions()
     {
-        return Region::all()->pluck('title');
+        return Region::all()->pluck('title', 'id');
     }
 
     public function show($id)

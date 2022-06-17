@@ -19,4 +19,9 @@ class Place extends Model
     {
         return $this->belongsTo('App\Models\Region');
     }
+
+    public function agendas()
+    {
+        return $this->hasMany('App\Models\Agenda')->orderBy('title', 'ASC');
+    }
 }

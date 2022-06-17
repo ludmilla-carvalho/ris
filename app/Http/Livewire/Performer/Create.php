@@ -24,7 +24,7 @@ class Create extends Component
 
     protected $rules = [
         'performer.name' => 'required|string|min:3|max:255|unique:performers,name,null',
-        'performer.bio' => 'bio',
+        'performer.bio' => 'nullable',
         'image' => 'required|mimes:png,jpg,jpeg,gif|file|max:2048',
     ];
 

@@ -48,6 +48,8 @@ Route::prefix('admin')->name('admin.')->middleware([
         return view('admin.dashboard');
     })->name('dashboard');
 
+    Route::get('agendas', \App\Http\Livewire\Agenda\Index::class)->name('agendas');
+
     Route::get('performers', \App\Http\Livewire\Performer\Index::class)->name('performers');
 
     Route::get('places', \App\Http\Livewire\Place\Index::class)->name('places');

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './select2.css'; 
 
 /* Tailwind elements
 https://tailwind-elements.com/quick-start/

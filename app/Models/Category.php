@@ -15,8 +15,8 @@ class Category extends Model
         'name', 'slug',
     ];
 
-    // public function agendas()
-    // {
-    //     return $this->hasMany('App\Models\Agenda')->orderBy('title', 'ASC');
-    // }
+    public function agendas()
+    {
+        return $this->hasMany('App\Models\Agenda')->orderBy('title', 'ASC');
+    }
 }
