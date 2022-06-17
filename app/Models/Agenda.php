@@ -27,6 +27,6 @@ class Agenda extends Model
 
     public function performers()
     {
-        return $this->belongsToMany('App\Models\Performer', 'agenda_performer', 'agenda_id', 'performer_id');//->orderBy('name', 'ASC')
+        return $this->belongsToMany('App\Models\Performer', 'agenda_performer', 'agenda_id', 'performer_id')->orderBy('name', 'ASC');
     }
 }

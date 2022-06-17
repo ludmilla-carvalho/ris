@@ -32,7 +32,8 @@ class Create extends Component
     ];
 
     protected $rules = [
-        'agenda.title' => 'required|string|min:3|max:255|unique:agendas,title,null',
+        //'agenda.title' => 'required|string|min:3|max:255|unique:agendas,title,null',
+        'agenda.title' => 'required|string|min:3|max:255',
         'agenda.info' => 'nullable',
         'agenda.date' => 'required',
         'agenda.destaque' => 'nullable',
@@ -120,7 +121,7 @@ class Create extends Component
             if (!is_dir($dir_file)) {
                 mkdir($dir_file, 0777, true);
             }
-            $this->agenda->image = $this->agenda->slug . '.' . $this->image->getClientOriginalExtension();
+            $this->agenda->image = time() . '.' . $this->image->getClientOriginalExtension();
             $this->image->storeAs('agendas/', $this->agenda->image, 'public');
         }
 
@@ -130,7 +131,7 @@ class Create extends Component
             if (!is_dir($dir_file)) {
                 mkdir($dir_file, 0777, true);
             }
-            $this->agenda->banner = $this->agenda->slug . '_b.' . $this->banner->getClientOriginalExtension();
+            $this->agenda->banner = time() . '_b.' . $this->banner->getClientOriginalExtension();
             $this->banner->storeAs('agendas/', $this->agenda->banner, 'public');
         }
 
@@ -140,7 +141,7 @@ class Create extends Component
             if (!is_dir($dir_file)) {
                 mkdir($dir_file, 0777, true);
             }
-            $this->agenda->banner_mobile = $this->agenda->slug . '_bm.' . $this->banner_mobile->getClientOriginalExtension();
+            $this->agenda->banner_mobile = time() . '_bm.' . $this->banner_mobile->getClientOriginalExtension();
             $this->banner_mobile->storeAs('agendas/', $this->agenda->banner_mobile, 'public');
         }
 

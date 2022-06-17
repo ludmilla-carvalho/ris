@@ -38,7 +38,8 @@ class Edit extends Component
     protected function rules()
     {
         return [
-            'agenda.title' => 'required|string|min:3|max:255|unique:agendas,title,' . $this->agenda->id,
+            //'agenda.title' => 'required|string|min:3|max:255|unique:agendas,title,' . $this->agenda->id,
+            'agenda.title' => 'required|string|min:3|max:255',
             'agenda.info' => 'nullable',
             'agenda.date' => 'required',
             'agenda.destaque' => 'nullable',
@@ -158,7 +159,7 @@ class Edit extends Component
             if (strlen($this->agenda->image) > 3) {
                 Storage::delete('public/agendas/' . $this->agenda->image);
             }
-            $this->agenda->image = $this->agenda->slug . '.' . $this->image->getClientOriginalExtension();
+            $this->agenda->image = time() . '.' . $this->image->getClientOriginalExtension();
             $this->image->storeAs('agendas/', $this->agenda->image, 'public');
         }
 
@@ -172,7 +173,7 @@ class Edit extends Component
             if (strlen($this->agenda->banner) > 3) {
                 Storage::delete('public/agendas/' . $this->agenda->banner);
             }
-            $this->agenda->banner = $this->agenda->slug . '_b.' . $this->banner->getClientOriginalExtension();
+            $this->agenda->banner = time() . '_b.' . $this->banner->getClientOriginalExtension();
             $this->banner->storeAs('agendas/', $this->agenda->banner, 'public');
         }
 
@@ -186,7 +187,7 @@ class Edit extends Component
             if (strlen($this->agenda->banner_mobile) > 3) {
                 Storage::delete('public/agendas/' . $this->agenda->banner_mobile);
             }
-            $this->agenda->banner_mobile = $this->agenda->slug . '_bm.' . $this->banner_mobile->getClientOriginalExtension();
+            $this->agenda->banner_mobile = time() . '_bm.' . $this->banner_mobile->getClientOriginalExtension();
             $this->banner_mobile->storeAs('agendas/', $this->agenda->banner_mobile, 'public');
         }
 
