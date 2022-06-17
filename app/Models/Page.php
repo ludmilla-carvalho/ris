@@ -15,18 +15,13 @@ class Page extends Model
         'name', 'slug', 'order', 'active', 'tit_seo', 'desc_seo'
     ];
 
-    // public function place()
-    // {
-    //     return $this->belongsTo('App\Models\Place')->orderBy('title', 'ASC');
-    // }
+    public function video()
+    {
+        return $this->hasOne('App\Models\Video');
+    }
 
-    // public function category()
-    // {
-    //     return $this->belongsTo('App\Models\Category')->orderBy('title', 'ASC');
-    // }
-
-    // public function performers()
-    // {
-    //     return $this->belongsToMany('App\Models\Performer', 'agenda_performer', 'agenda_id', 'performer_id'); //->orderBy('name', 'ASC')
-    // }
+    public function text()
+    {
+        return $this->hasOne('App\Models\Text');
+    }
 }

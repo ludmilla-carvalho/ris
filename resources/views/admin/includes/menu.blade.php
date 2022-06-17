@@ -10,23 +10,29 @@
             </a>
         </li>
 
-        {{-- <li class="mb-1" id="menu_pages">
-            <a class="flex items-center text-lg h-8 {!! request()->routeIs('admin.places') || request()->routeIs('admin.regions') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapseSidenavPages" aria-expanded="true" aria-controls="collapseSidenavPages">
+        <li class="mb-1" id="menu_pages">
+            <a class="flex items-center text-lg h-8 {!! request()->routeIs('admin.pages') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapseSidenavPages" aria-expanded="true" aria-controls="collapseSidenavPages">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-2" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="currentColor" d="M0 64C0 28.65 28.65 0 64 0H224V128C224 145.7 238.3 160 256 160H384V448C384 483.3 355.3 512 320 512H64C28.65 512 0 483.3 0 448V64zM256 128V0L384 128H256z"/></svg>
                 <span>Páginas</span>
                 <svg aria-hidden="true" focusable="false" class="w-3 h-3 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
                 </svg>
             </a>
-            <ul class="accordion-collapse collapse {!! request()->routeIs('admin.places') || request()->routeIs('admin.regions') ? 'show' : '' !!}" id="collapseSidenavPages" aria-labelledby="menu_pages" data-bs-parent="#sidenavExample">
+            <ul class="accordion-collapse collapse {!! request()->routeIs('admin.pages') ? 'show' : '' !!}" id="collapseSidenavPages" aria-labelledby="menu_pages" data-bs-parent="#sidenavExample">
                 <li class="relative mb-2">
-                    <a href="{{ route('admin.places') }}" class="flex items-center text-base py-0 px-2 {!! request()->routeIs('admin.places') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Home</a>
+                    <a href="{{ route('admin.pages', 'home') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/home') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Home</a>
                 </li>
                 <li class="relative mb-2">
-                    <a href="{{ route('admin.regions') }}" class="flex items-center text-base py-0 px-2 {!! request()->routeIs('admin.regions') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Regiões</a>
+                    <a href="{{ route('admin.pages', 'sobre-o-festival') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/sobre-o-festival') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Sobre o Festival</a>
+                </li>
+                <li class="relative mb-2">
+                    <a href="{{ route('admin.pages', 'programacao') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/programacao') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Programação</a>
+                </li>
+                <li class="relative mb-2">
+                    <a href="{{ route('admin.pages', 'contato') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/contato') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Contato</a>
                 </li>
             </ul>
-        </li> --}}
+        </li>
 
         <li class="mb-1" id="menu_agenda">
             <a class="flex items-center text-lg h-8 hover:text-orange-500 transition duration-300 ease-in-out cursor-pointer {!! request()->routeIs('admin.agendas') ? 'text-orange-500' : '' !!}" href="{{ route('admin.agendas') }}">

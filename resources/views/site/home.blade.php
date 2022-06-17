@@ -64,8 +64,8 @@
             </div>
         </div>
         <div class="lg:col-span-4">
-            <div class="aspect-w-16 aspect-h-9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7-UFZjHdud4" title="Risadaria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="aspect-w-16 aspect-h-9"> 
+                {!! $page->video->embed !!}
             </div>
         </div>
     </div>

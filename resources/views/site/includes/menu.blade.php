@@ -9,31 +9,15 @@
   
     <div class="hidden w-full lg:flex lg:items-center lg:w-auto pt-4 lg:mr-5" id="menu">
         <ul class="text-sm lg:flex lg:justify-between font-bld">
-            <li>
-                <a class="lg:px-0.5 py-0 block" href="{{ route('sobre') }}">
-                    <div class="parallelogram bg-verde hover:opacity-50"><span class="txt">Sobre o Festival</span></div>
-                </a>
-            </li>
-            {{-- <li>
-                <a class="lg:px-0.5 py-0 block" href="#">
-                    <div class="parallelogram bg-azul-m hover:opacity-50"><span class="txt">Line-up</span></div>
-                </a>
-            </li> 
-            <li>
-                <a class="lg:px-0.5 py-0 block" href="#">
-                    <div class="parallelogram bg-azul hover:opacity-50"><span class="txt">Programação Adulto</span></div>
-                </a>
-            </li>
-            <li>
-                <a class="lg:px-0.5 py-0 block" href="#">
-                    <div class="parallelogram bg-vermelho hover:opacity-50"><span class="txt">Programação Infantil</span></div>
-                </a>
-            </li> --}}
-            <li>
-                <a class="lg:px-0.5 py-0 block" href="{{ route('contato') }}">
-                    <div class="parallelogram bg-laranja hover:opacity-50"><span class="txt">Contato</span></div>
-                </a>
-            </li>
+            @foreach ($pages_menu as $pg)
+                @if ($pg->active == 1 && $pg->id != 1)
+                    <li>
+                        <a class="lg:px-0.5 py-0 block" href="{{ route($pg->slug) }}">
+                            <div class="parallelogram bg-{{ $pg->cor }} hover:opacity-50"><span class="txt">{{ $pg->name }}</span></div>
+                        </a>
+                    </li>
+                @endif
+            @endforeach
         </ul>
     </div>
 </nav>

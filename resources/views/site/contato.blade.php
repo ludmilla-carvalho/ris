@@ -8,21 +8,21 @@
         <h2 class="font-bld text-azul-e sm:text-lg ml-4 sm:ml-7">Contato</h2>
         <span class="inline-flex items-baseline">
             <img src="{{ asset('images/icons/envelope.svg') }}" alt="" class="self-center w-4 h-4 sm:w-6 sm:h-6 mr-0.5 sm:mr-1 icon-envelope" />
-            <span class="text-xs sm:text-base">contato@conteudocriativo.com.br</span>
+            <span class="text-xs sm:text-base">{{ $contact->email }}</span>
         </span>
 
         <h2 class="font-bld text-azul-e sm:text-lg ml-4 sm:ml-7 mt-2 sm:mt-3">Assessoria de Imprensa:</h2>
         <div>
             <span class="inline-flex items-baseline">
                 <img src="{{ asset('images/icons/envelope.svg') }}" alt="" class="self-center w-4 h-4 sm:w-6 sm:h-6 mr-0.5 sm:mr-1 icon-envelope" />
-                <span class="text-xs sm:text-base">contato@ftestrategias.com.br</span>
+                <span class="text-xs sm:text-base">{{ $contact->email_press }}</span>
             </span>
         </div>
 
         <div>
             <span class="inline-flex items-baseline sm:mt-2">
                 <img src="{{ asset('images/icons/phone.svg') }}" alt="" class="self-center w-4 h-4 sm:w-6 sm:h-6 mr-0.5 sm:mr-1 icon-phone" />
-                <span class="text-xs sm:text-base">11 94064-7148</span>
+                <span class="text-xs sm:text-base">{{ $contact->phone_press }}</span>
             </span>
         </div>
     </div>
@@ -33,21 +33,21 @@
             <h2 class="font-bld text-azul-e text-2xl ml-10">Contato</h2>
             <span class="inline-flex items-baseline">
                 <img src="{{ asset('images/icons/envelope.svg') }}" alt="" class="self-center w-8 h-8 mr-2 icon-envelope" />
-                <span class="text-lg">contato@conteudocriativo.com.br</span>
+                <span class="text-lg">{{ $contact->email }}</span>
             </span>
 
             <h2 class="font-bld text-azul-e text-2xl ml-10 mt-6">Assessoria de Imprensa:</h2>
             <div>
                 <span class="inline-flex items-baseline">
                     <img src="{{ asset('images/icons/envelope.svg') }}" alt="" class="self-center w-8 h-8 mr-2 icon-envelope" />
-                    <span class="text-lg">contato@ftestrategias.com.br</span>
+                    <span class="text-lg">{{ $contact->email_press }}</span>
                 </span>
             </div>
 
             <div>
                 <span class="inline-flex items-baseline mt-4">
                     <img src="{{ asset('images/icons/phone.svg') }}" alt="" class="self-center w-8 h-8 mr-2 icon-phone" />
-                    <span class="text-lg">11 94064-7148</span>
+                    <span class="text-lg">{{ $contact->phone_press }}</span>
                 </span>
             </div>
         </div>

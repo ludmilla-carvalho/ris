@@ -47,11 +47,6 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(97,96,96,1) 100%);
     color: white;
 }
-.bg{
-    /* teste bg bolinhas orange dotp  */
-    /* background: url(../img/bg/dot.png) repeat; */
-    /* height: 2000px; */
-}
 #logo{
     width:180px;
 }
@@ -81,6 +76,11 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
     border-radius: 50%;
     width: 10px;
     height: 10px;
+}
+
+/* Sobre */
+#sobre p{
+    @apply text-white md:text-xl text-justify my-3 md:my-5;
 }
 
 

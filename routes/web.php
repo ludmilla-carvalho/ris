@@ -17,17 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('site.espera');
 // })->name('espera');
 
-Route::get('/', function () {
-    return view('site.home');
-})->name('home');
-
-Route::get('/sobre-o-festival', function () {
-    return view('site.sobre');
-})->name('sobre');
-
-Route::get('/contato', function () {
-    return view('site.contato');
-})->name('contato');
+Route::get('/', [\App\Http\Controllers\Site\PageController::class, 'home'])->name('home');
+Route::get('/sobre-o-festival', [\App\Http\Controllers\Site\PageController::class, 'sobre'])->name('sobre-o-festival');
+Route::get('/programacao', [\App\Http\Controllers\Site\PageController::class, 'programacao'])->name('programacao');
+Route::get('/contato', [\App\Http\Controllers\Site\PageController::class, 'contato'])->name('contato');
 
 
 
@@ -48,7 +41,7 @@ Route::prefix('admin')->name('admin.')->middleware([
         return view('admin.dashboard');
     })->name('dashboard');
 
-    // Route::get('pages/{page:slug}', \App\Http\Livewire\Page\Edit::class)->name('pages');
+    Route::get('pages/{page:slug}', \App\Http\Livewire\Page\Edit::class)->name('pages');
 
     Route::get('agendas', \App\Http\Livewire\Agenda\Index::class)->name('agendas');
 

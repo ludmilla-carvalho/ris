@@ -9,31 +9,31 @@ class Edit extends Component
 {
     public $name = "Página";
     public $comp = 'page';
-    //public $open = false;
     public Page $page;
-    //public $page_id = null;
-
-    protected $listeners = [
-        //'show' => 'show',
-        //'toogleActive' => 'toogleActive',
-    ];
 
     protected function rules()
     {
         return [
-            'page.title' => 'required|string|min:3|max:255|unique:pages,title,' . $this->page->id,
+            'page.name' => 'required|string|min:3|max:255|unique:pages,name,' . $this->page->id,
+            'page.order' => 'required|unique:pages,order,' . $this->page->id,
+            'page.tit_seo' => 'nullable',
+            'page.desc_seo' => 'nullable',
             'page.active' => 'nullable',
         ];
     }
 
     protected $validationAttributes = [
-        'page.title' => 'região',
+        'page.name' => 'nome',
+        'page.order' => 'ordem',
+        'page.tit_seo' => 'SEO - título',
+        'page.desc_seo' => 'SEO - descrição',
         'page.active' => 'ativo',
     ];
 
-    public function mount()
+    public function mount($page)
     {
-        //$this->page = new Page();
+        //$this->page = $page;
+        $this->page = Page::find($page->id);
     }
 
     public function updated($propertyName)
@@ -41,23 +41,14 @@ class Edit extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function show($id)
-    {
-        /*$this->resetValidation();
-        $this->page = Page::find($id);
-        $this->open = true;*/
-    }
-
     public function save()
     {
-        /*$this->validate();
+        $this->validate();
         $this->page->update($this->page->toArray());
-        $this->emit('refreshPage'); //atualiza page datatable
-        $this->open = false;*/
     }
 
     public function render()
     {
-        return view('livewire.page.edit');
+        return view('livewire.page.edit')->layout('layouts.admin');
     }
 }
