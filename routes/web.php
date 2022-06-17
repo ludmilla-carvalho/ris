@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Site\PageController::class, 'home'])->name('home');
 Route::get('/sobre-o-festival', [\App\Http\Controllers\Site\PageController::class, 'sobre'])->name('sobre-o-festival');
-Route::get('/programacao', [\App\Http\Controllers\Site\PageController::class, 'programacao'])->name('programacao');
+Route::get('/programacao-adulto', [\App\Http\Controllers\Site\PageController::class, 'programacaoAdulto'])->name('programacao-adulto');
 Route::get('/contato', [\App\Http\Controllers\Site\PageController::class, 'contato'])->name('contato');
 
 

@@ -4183,6 +4183,26 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+.bg-verde {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 91 46 / var(--tw-bg-opacity));
+}
+.bg-azul {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 105 154 / var(--tw-bg-opacity));
+}
+.bg-azul-m {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 37 71 / var(--tw-bg-opacity));
+}
+.bg-vermelho {
+  --tw-bg-opacity: 1;
+  background-color: rgb(205 32 41 / var(--tw-bg-opacity));
+}
+.bg-laranja {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 136 34 / var(--tw-bg-opacity));
+}
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
