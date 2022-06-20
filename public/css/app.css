@@ -2438,14 +2438,6 @@ select {
 .carousel-indicators .active {
   opacity: 1;
 }
-.carousel-caption {
-  right: 15%;
-  bottom: 1.25rem;
-  left: 15%;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  color: #fff;
-}
 .carousel-dark .carousel-control-prev-icon {
   filter: invert(1) grayscale(100);
 }
@@ -2454,9 +2446,6 @@ select {
 }
 .carousel-dark .carousel-indicators [data-bs-target] {
   background-color: #000;
-}
-.carousel-dark .carousel-caption {
-  color: #000;
 }
 .offcanvas-backdrop.show {
   opacity: 0.5;
@@ -3434,6 +3423,9 @@ select {
 }
 .float-left {
   float: left;
+}
+.clear-both {
+  clear: both;
 }
 .m-1 {
   margin: 0.25rem;
@@ -5831,10 +5823,6 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .md\:mt-0 {
     margin-top: 0px;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:grid {

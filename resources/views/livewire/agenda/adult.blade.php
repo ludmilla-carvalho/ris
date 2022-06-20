@@ -120,7 +120,7 @@
             </div>
             @endforeach
 
-            <div class="pagination">
+            <div class="pagination clear-both">
                 {{ $items->links() }}
             </div>
         @else
