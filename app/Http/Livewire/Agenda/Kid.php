@@ -93,6 +93,7 @@ class Kid extends Component
     {
         $filt = $this->filters;
         $query = Agenda::where('category_id', '=', 6)
+            ->where('active', 1)
             ->orderBy('date', 'asc');
 
         if ($this->filters['type'] == 'performer') {

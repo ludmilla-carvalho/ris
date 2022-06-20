@@ -28,9 +28,9 @@ class DataTable extends LivewireDatatable
                 ->label('Região')
                 ->searchable(),
 
-            Column::callback(['id', 'active'], function ($id, $active) {
-                return view('admin.regions.table-active', ['id' => $id, 'active' => $active]);
-            })->unsortable()->label('Ativo'),
+            // Column::callback(['id', 'active'], function ($id, $active) {
+            //     return view('admin.regions.table-active', ['id' => $id, 'active' => $active]);
+            // })->unsortable()->label('Ativo'),
 
             DateColumn::name('created_at')
                 ->label('Criado em'),

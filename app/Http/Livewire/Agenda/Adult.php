@@ -93,7 +93,8 @@ class Adult extends Component
     {
         $filt = $this->filters;
         $query = Agenda::where('category_id', '<>', 6)
-        ->orderBy('date', 'asc');
+            ->where('active', 1)
+            ->orderBy('date', 'asc');
 
         if ($this->filters['type'] == 'performer') {
             if ($this->filters['value']) {
