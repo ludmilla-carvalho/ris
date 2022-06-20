@@ -4,15 +4,17 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\Agenda;
 use App\Models\Contact;
 
 class PageController extends Controller
 {
     public function home()
     {
+        $banners = Agenda::where('destaque', 1)->get();
         $pages = Page::orderBy('order')->get();
         $page = Page::find(1);
-        return view('site.home', compact('pages', 'page'));
+        return view('site.home', compact('pages', 'page', 'banners'));
     }
 
     public function sobre()
