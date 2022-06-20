@@ -1,6 +1,6 @@
 <x-site-layout>
     <div>
-        <h1 class="text-white text-3xl lg:text-4xl font-bold">Contato</h1>
+        <h1 class="text-white text-2xl lg:text-4xl font-bold">Contato</h1>
     </div>
 
     {{-- Mobile --}}

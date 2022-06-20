@@ -13,7 +13,7 @@
                 @if ($pg->active == 1 && $pg->id != 1)
                     <li>
                         <a class="lg:px-0.5 py-0 block" href="{{ route($pg->slug) }}">
-                            <div class="parallelogram bg-{{ $pg->cor }} hover:opacity-50"><span class="txt">{{ $pg->name }}</span></div>
+                            <div class="parallelogram bg-{{ $pg->cor }} hover:opacity-75"><span class="txt">{{ $pg->name }}</span></div>
                         </a>
                     </li>
                 @endif

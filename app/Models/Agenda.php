@@ -22,7 +22,7 @@ class Agenda extends Model
 
     public function category()
     {
-        return $this->belongsTo('App\Models\Category')->orderBy('title', 'ASC');
+        return $this->belongsTo('App\Models\Category')->orderBy('name', 'ASC');
     }
 
     public function performers()

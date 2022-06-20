@@ -3429,6 +3429,9 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.float-right {
+  float: right;
+}
 .float-left {
   float: left;
 }
@@ -3461,6 +3464,10 @@ select {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .-my-1 {
   margin-top: -0.25rem;
@@ -3567,6 +3574,12 @@ select {
 .mr-8 {
   margin-right: 2rem;
 }
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mb-px {
   margin-bottom: 1px;
 }
@@ -3653,6 +3666,9 @@ select {
 }
 .h-3 {
   height: 0.75rem;
+}
+.h-\[50px\] {
+  height: 50px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -4000,6 +4016,14 @@ select {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+.rounded-l-lg {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.rounded-r-lg {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
 .rounded-tl-md {
   border-top-left-radius: 0.375rem;
 }
@@ -4048,6 +4072,9 @@ select {
 .border-r-0 {
   border-right-width: 0px;
 }
+.border-b-4 {
+  border-bottom-width: 4px;
+}
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -4090,6 +4117,14 @@ select {
 .border-blue-400 {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity));
+}
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+.border-azul {
+  --tw-border-opacity: 1;
+  border-color: rgb(32 105 154 / var(--tw-border-opacity));
 }
 .border-white {
   --tw-border-opacity: 1;
@@ -4175,6 +4210,22 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(254 249 195 / var(--tw-bg-opacity));
 }
+.bg-laranja {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 136 34 / var(--tw-bg-opacity));
+}
+.bg-vermelho {
+  --tw-bg-opacity: 1;
+  background-color: rgb(205 32 41 / var(--tw-bg-opacity));
+}
+.bg-azul {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 105 154 / var(--tw-bg-opacity));
+}
+.bg-azul-m {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 37 71 / var(--tw-bg-opacity));
+}
 .bg-blue-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
@@ -4186,22 +4237,6 @@ select {
 .bg-verde {
   --tw-bg-opacity: 1;
   background-color: rgb(26 91 46 / var(--tw-bg-opacity));
-}
-.bg-azul {
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 105 154 / var(--tw-bg-opacity));
-}
-.bg-azul-m {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 37 71 / var(--tw-bg-opacity));
-}
-.bg-vermelho {
-  --tw-bg-opacity: 1;
-  background-color: rgb(205 32 41 / var(--tw-bg-opacity));
-}
-.bg-laranja {
-  --tw-bg-opacity: 1;
-  background-color: rgb(246 136 34 / var(--tw-bg-opacity));
 }
 .bg-gray-300 {
   --tw-bg-opacity: 1;
@@ -4320,6 +4355,14 @@ select {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
 }
+.px-0\.5 {
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -4436,10 +4479,6 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 .text-\[31px\] {
   font-size: 31px;
@@ -4614,6 +4653,18 @@ select {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
+.text-verde {
+  --tw-text-opacity: 1;
+  color: rgb(26 91 46 / var(--tw-text-opacity));
+}
+.text-vermelho {
+  --tw-text-opacity: 1;
+  color: rgb(205 32 41 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-amarelo {
   --tw-text-opacity: 1;
   color: rgb(254 233 1 / var(--tw-text-opacity));
@@ -4716,6 +4767,13 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-150 {
   transition-duration: 150ms;
 }
@@ -4805,6 +4863,8 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
 #menu .parallelogram .txt {
     display: inline-block;
 }
+
+/* Contato */
 .icon-envelope{
     filter: invert(48%) sepia(71%) saturate(1407%) hue-rotate(296deg) brightness(99%) contrast(104%);
 }
@@ -4837,6 +4897,16 @@ Change svg color https://stackoverflow.com/questions/22252472/how-to-change-the-
   }
 }
 
+/* Programação */
+#programacao .parallelogram{
+    transform: skewX(-20deg);
+    padding: 0.5rem 1.2rem;
+}
+#programacao .parallelogram .txt{
+    transform: skewX(20deg);
+    display: inline-block;
+}
+
 
 /*
 sm	640px	@media (min-width: 640px) { ... }
@@ -4850,6 +4920,9 @@ xl	1280px	@media (min-width: 1280px) { ... }
 @media (min-width: 640px) {
     #logo{
         width:235px;
+    }
+    #programacao .parallelogram{
+        padding: 0.5rem 0.5rem;
     }
 }
 
@@ -4983,6 +5056,24 @@ xl	1280px	@media (min-width: 1280px) { ... }
 }
 
 
+.hover\:bg-orange-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
+
+.hover\:bg-vermelho:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(205 32 41 / var(--tw-bg-opacity));
+}
+
+
+.hover\:bg-azul-m:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 37 71 / var(--tw-bg-opacity));
+}
+
+
 .hover\:bg-blue-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
@@ -5084,8 +5175,8 @@ xl	1280px	@media (min-width: 1280px) { ... }
 }
 
 
-.hover\:opacity-50:hover {
-  opacity: 0.5;
+.hover\:opacity-75:hover {
+  opacity: 0.75;
 }
 
 
@@ -5335,6 +5426,12 @@ xl	1280px	@media (min-width: 1280px) { ... }
 }
 
 
+.active\:text-white:active {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
@@ -5512,6 +5609,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
     display: block;
   }
 
+  .sm\:inline-block {
+    display: inline-block;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -5528,6 +5629,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
     height: 1.5rem;
   }
 
+  .sm\:h-\[70px\] {
+    height: 70px;
+  }
+
   .sm\:h-20 {
     height: 5rem;
   }
@@ -5542,6 +5647,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .sm\:w-6 {
     width: 1.5rem;
+  }
+
+  .sm\:w-\[110px\] {
+    width: 110px;
   }
 
   .sm\:w-1\/3 {
@@ -5736,6 +5845,14 @@ xl	1280px	@media (min-width: 1280px) { ... }
     display: none;
   }
 
+  .md\:h-\[100px\] {
+    height: 100px;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
+  }
+
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -5750,6 +5867,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
   }
 
   .md\:border-t-0 {
@@ -5768,6 +5889,16 @@ xl	1280px	@media (min-width: 1280px) { ... }
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -5839,8 +5970,16 @@ xl	1280px	@media (min-width: 1280px) { ... }
     margin-left: 1.5rem;
   }
 
+  .lg\:mr-6 {
+    margin-right: 1.5rem;
+  }
+
   .lg\:block {
     display: block;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
   }
 
   .lg\:flex {
@@ -5853,6 +5992,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-\[120px\] {
+    height: 120px;
   }
 
   .lg\:w-auto {
@@ -5903,6 +6046,16 @@ xl	1280px	@media (min-width: 1280px) { ... }
     padding-right: 0px;
   }
 
+  .lg\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .lg\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -5910,6 +6063,16 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .lg\:text-lg {
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }
@@ -5923,6 +6086,16 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .xl\:text-\[81px\] {

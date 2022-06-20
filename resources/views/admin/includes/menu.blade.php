@@ -26,7 +26,7 @@
                     <a href="{{ route('admin.pages', 'sobre-o-festival') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/sobre-o-festival') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Sobre o Festival</a>
                 </li>
                 <li class="relative mb-2">
-                    <a href="{{ route('admin.pages', 'programacao-adulto') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/programacao-adulto') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Programação</a>
+                    <a href="{{ route('admin.pages', 'programacao-adulto') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/programacao-adulto') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Programação Adulto</a>
                 </li>
                 <li class="relative mb-2">
                     <a href="{{ route('admin.pages', 'contato') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/contato') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Contato</a>
