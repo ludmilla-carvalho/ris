@@ -30,6 +30,11 @@
 
             @if ($filters['type'] == 'region')
                 <div class="my-3 md:my-5 text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    @foreach ($places as $place)
+                        <a class="hover:bg-vermelho hover:text-white px-1 lg:px-2 {!! $filters['value'] == $place ? 'bg-vermelho text-white' : 'text-vermelho' !!}" wire:click="setSearch(null,'{{ $place }}')">{{ $place }}</a>
+                    @endforeach
+                </div> 
+                {{-- <div class="my-3 md:my-5 text-lg md:text-xl lg:text-2xl xl:text-3xl">
                     @foreach ($regions as $reg)
                         <a class="hover:bg-vermelho hover:text-white px-1 lg:px-2 {!! $filters['value'] == $reg ? 'bg-vermelho text-white' : 'text-vermelho' !!}" wire:click="setSearch(null, '{{ $reg }}')">{{ $reg }}</a>
                     @endforeach
@@ -41,7 +46,7 @@
                             @endforeach
                         </div>   
                     @endif
-                </div>
+                </div> --}}
             @endif
 
             @if ($filters['type'] == 'category')
@@ -90,9 +95,6 @@
                     <span class="font-bld text-2xl block mb-3">{{ $item->title }}</span>
 
                     <div class="">
-
-                        <img src="{{ asset("images/icons/categories/" . $item->category->slug . ".svg") }}" alt="{{ $item->title }}" class="h-20 float-right ml-2 mb-2">
-
                         {!! preg_replace('#(<[a-z ]*)(style=("|\')(.*?)("|\'))([a-z ]*>)#', '\\1\\6', $item->info) !!}
 
                         <?php
@@ -108,10 +110,13 @@
 
                     <div class="my-3">
                         <span class="font-bld text-lg">{{ $item->place->title }}</span>
-                        <div class="text-sm">{!! $item->place->services !!}</div>
+
+                        <a data-bs-toggle="collapse" href="#collapse{{ $item->id }}" role="button" aria-expanded="false" aria-controls="collapse{{ $item->id }}"><img src="{{ asset("images/btn_saiba.png") }}" alt="Saiba mais" class="my-3"></a>
+
+                        <div class="text-sm collapse" id="collapse{{ $item->id }}">{!! $item->place->services !!}</div>
                     </div>
                     @if ($item->pago == 1)
-                        <a href="{{ $item->link_pago }}" target="_blank"><img src="{{ asset("images/btn.png") }}" alt="{{ $item->title }}" class="my-3 float-left"></a>
+                        <a href="{{ $item->link_pago }}" target="_blank"><img src="{{ asset("images/btn.png") }}" alt="{{ $item->title }}" class="my-3"></a>
                     @endif
 
                     

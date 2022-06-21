@@ -37,13 +37,13 @@ class Adult extends Component
         if ($value != null) {
             $this->filters['value'] = $value;
 
-            if ($this->filters['type'] == 'region') {
-                $this->region = $value;
-                $this->getPlaces($value);
-            } else {
-                $this->region = null;
-                $this->places = [];
-            }
+            // if ($this->filters['type'] == 'region') {
+            //     $this->region = $value;
+            //     $this->getPlaces($value);
+            // } else {
+            //     $this->region = null;
+            //     $this->places = [];
+            // }
             $this->runQueryBuilder();
         }
 
@@ -54,7 +54,8 @@ class Adult extends Component
 
     public function mount()
     {
-        $this->getRegions();
+        //$this->getRegions();
+        $this->getPlaces();
         $this->getCategories();
     }
 
@@ -63,12 +64,18 @@ class Adult extends Component
         $this->regions = Region::whereRelation('places.agendas', 'category_id', '<>', 6)->pluck('title', 'id');
     }
 
-    protected function getPlaces($region = null)
+    protected function getPlaces()
     {
         $this->places = Place::whereRelation('agendas', 'category_id', '<>', 6)
-            ->whereRelation('region', 'title', $region)
             ->pluck('title', 'id');
     }
+
+    // protected function getPlaces($region = null)
+    // {
+    //     $this->places = Place::whereRelation('agendas', 'category_id', '<>', 6)
+    //         ->whereRelation('region', 'title', $region)
+    //         ->pluck('title', 'id');
+    // }
 
     protected function getCategories()
     {
@@ -104,11 +111,14 @@ class Adult extends Component
 
         if ($this->filters['type'] == 'region') {
             if ($this->filters['value']) {
-                $query = $query->whereRelation('place.region', 'title', '=', $this->filters['value']);
+                $query = $query->whereRelation('place', 'title', '=', $this->filters['value']);
             }
-            if ($this->filters['place']) {
-                $query = $query->whereRelation('place', 'title', '=', $this->filters['place']);
-            }
+            // if ($this->filters['value']) {
+            //     $query = $query->whereRelation('place.region', 'title', '=', $this->filters['value']);
+            // }
+            // if ($this->filters['place']) {
+            //     $query = $query->whereRelation('place', 'title', '=', $this->filters['place']);
+            // }
         }
 
         if ($this->filters['type'] == 'category') {
