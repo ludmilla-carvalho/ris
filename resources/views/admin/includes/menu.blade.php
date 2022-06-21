@@ -29,6 +29,9 @@
                     <a href="{{ route('admin.pages', 'programacao-adulto') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/programacao-adulto') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Programação Adulto</a>
                 </li>
                 <li class="relative mb-2">
+                    <a href="{{ route('admin.pages', 'programacao-infantil') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/programacao-infantil') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Programação Infantil</a>
+                </li>
+                <li class="relative mb-2">
                     <a href="{{ route('admin.pages', 'contato') }}" class="flex items-center text-base py-0 px-2 {!! request()->is('admin/pages/contato') ? 'text-orange-500 hover:text-white' : 'hover:text-orange-500' !!} transition duration-300 ease-in-out">Contato</a>
                 </li>
             </ul>
