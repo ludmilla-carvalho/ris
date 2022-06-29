@@ -1,6 +1,6 @@
 <x-site-layout>
     {{-- Carousel --}}
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade class relative" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade class relative" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators absolute right-0 -bottom-12 left-0 flex justify-center p-0 mb-4 md:hidden">
             <?php $i = 0;?>
             @foreach ($banners as $banner)
