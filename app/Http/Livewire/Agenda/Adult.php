@@ -6,6 +6,7 @@ use App\Models\Agenda;
 use App\Models\Region;
 use App\Models\Place;
 use App\Models\Category;
+use App\Models\Performer;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,24 +19,37 @@ class Adult extends Component
     public $region = null;
     public $places = [];
     public $categories = [];
+    public $performers = [];
+    public $letter = null;
     public $sorts = [];
     public $filters = array(
         'type' => null,
         'value' => null,
-        'place' => null
+        'place' => null,
+        'performer' => null
     );
     public $perPage = 10;
 
-    public function setSearch($type = null, $value = null, $place = null)
+    public function setSearch($type = null, $value = null, $place = null, $performer = null)
     {
         if ($type != null) {
             $this->filters['type'] = $type;
             $this->filters['value'] = null;
             $this->filters['place'] = null;
+            $this->filters['performer'] = null;
         }
 
         if ($value != null) {
             $this->filters['value'] = $value;
+            $this->filters['performer'] = null;
+
+            if ($this->filters['type'] == 'performer') {
+                $this->letter = $value;
+                $this->getPerformers($value);
+            } else {
+                $this->letter = null;
+                $this->performers = [];
+            }
 
             // if ($this->filters['type'] == 'region') {
             //     $this->region = $value;
@@ -49,6 +63,10 @@ class Adult extends Component
 
         if ($place != null) {
             $this->filters['place'] = $place;
+        }
+
+        if ($performer != null) {
+            $this->filters['performer'] = $performer;
         }
     }
 
@@ -76,6 +94,13 @@ class Adult extends Component
     //         ->whereRelation('region', 'title', $region)
     //         ->pluck('title', 'id');
     // }
+
+    protected function getPerformers($letter = null)
+    {
+        $this->performers = Performer::whereRelation('agendas', 'category_id', '<>', 6)
+            ->where('name', 'like', $letter . '%')
+            ->pluck('name', 'id');
+    }
 
     protected function getCategories()
     {
@@ -106,6 +131,9 @@ class Adult extends Component
         if ($this->filters['type'] == 'performer') {
             if ($this->filters['value']) {
                 $query = $query->whereRelation('performers', 'name', 'like', $this->filters['value'] . '%');
+            }
+            if ($this->filters['performer']) {
+                $query = $query->whereRelation('performers', 'name', '=', $this->filters['performer']);
             }
         }
 

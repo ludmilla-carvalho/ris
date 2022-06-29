@@ -6,6 +6,7 @@ use App\Models\Agenda;
 use App\Models\Category;
 use App\Models\Place;
 use App\Models\Region;
+use App\Models\Performer;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,29 +19,47 @@ class Kid extends Component
     public $region = null;
     public $places = [];
     public $categories = [];
+    public $performers = [];
+    public $letter = null;
     public $sorts = [];
     public $filters = array(
         'type' => null,
         'value' => null,
         'place' => null,
+        'performer' => null
     );
     public $perPage = 11;
 
-    public function setSearch($type = null, $value = null, $place = null)
+    public function setSearch($type = null, $value = null, $place = null, $performer = null)
     {
         if ($type != null) {
             $this->filters['type'] = $type;
             $this->filters['value'] = null;
             $this->filters['place'] = null;
+            $this->filters['performer'] = null;
         }
 
         if ($value != null) {
             $this->filters['value'] = $value;
+            $this->filters['performer'] = null;
+
+            if ($this->filters['type'] == 'performer') {
+                $this->letter = $value;
+                $this->getPerformers($value);
+            } else {
+                $this->letter = null;
+                $this->performers = [];
+            }
+
             $this->runQueryBuilder();
         }
 
         if ($place != null) {
             $this->filters['place'] = $place;
+        }
+
+        if ($performer != null) {
+            $this->filters['performer'] = $performer;
         }
     }
 
@@ -67,6 +86,13 @@ class Kid extends Component
         $this->categories = Category::has('agendas')->get();
     }
 
+    protected function getPerformers($letter = null)
+    {
+        $this->performers = Performer::whereRelation('agendas', 'category_id', '=', 6)
+            ->where('name', 'like', $letter . '%')
+            ->pluck('name', 'id');
+    }
+
     public function applySorting($query)
     {
         foreach ($this->sorts as $column => $direction) {
@@ -91,6 +117,9 @@ class Kid extends Component
         if ($this->filters['type'] == 'performer') {
             if ($this->filters['value']) {
                 $query = $query->whereRelation('performers', 'name', 'like', $this->filters['value'] . '%');
+            }
+            if ($this->filters['performer']) {
+                $query = $query->whereRelation('performers', 'name', '=', $this->filters['performer']);
             }
         }
 

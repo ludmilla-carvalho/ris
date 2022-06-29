@@ -15,8 +15,8 @@ class Performer extends Model
         'name', 'slug', 'bio', 'image'
     ];
 
-    // public function agendas()
-    // {
-    //     return $this->hasMany('App\Models\Agenda')->orderBy('title', 'ASC');
-    // }
+    public function agendas()
+    {
+        return $this->belongsToMany('App\Models\Agenda')->orderBy('title', 'ASC');
+    }
 }

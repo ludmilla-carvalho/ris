@@ -26,6 +26,13 @@
                     @endforeach
                 
                 </div>
+                @if ($letter)
+                    <div class="my-3 md:my-5 text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                        @foreach ($performers as $performer)
+                            <a class="hover:bg-orange-500 hover:text-white px-1 lg:px-2 {!! $filters['performer'] == $performer ? 'bg-orange-500 text-white' : 'text-orange-500' !!}" wire:click="setSearch(null, null, null, '{{ $performer }}')">{{ $performer }}</a>
+                        @endforeach
+                    </div>   
+                @endif
             @endif
 
             @if ($filters['type'] == 'region')
@@ -75,7 +82,7 @@
 
             <div class="my-3 md:my-5 text-lg md:text-xl lg:text-2xl xl:text-3xl text-black">
                 <?php 
-                    // var_dump($filters);
+                    //var_dump($filters);
                     // var_dump($region);
                     // var_dump($categories);
                 ?>
