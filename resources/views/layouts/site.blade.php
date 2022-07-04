@@ -46,7 +46,7 @@
         </div>
 
         <footer class="bg-white relative min-h-[5vh]">
-            <img src="{{ asset('images/patrocinadores.png') }}" alt="Patrocinadores" class="w-full" >
+            <img src="{{ asset('images/patrocinadores.jpg') }}" alt="Patrocinadores" class="w-full" >
             {{-- https://zaneray.com/responsive-image-map/ --}}
             <a href="https://www.usiminas.com/" title="Usiminas" style="position: absolute; left: 12.62%; top: 48.94%; width: 15.07%; height: 27.84%; z-index: 9001;" target="_blank"></a>
             <a href="https://www.mundobic.com.br/depto/barbear/barbeadores" title="Bic Confort 3" style="position: absolute; left: 28.59%; top: 48.4%; width: 9.86%; height: 27.84%; z-index: 9002;" target="_blank"></a>
