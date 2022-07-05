@@ -58,6 +58,7 @@ class Adult extends Component
             //     $this->region = null;
             //     $this->places = [];
             // }
+            $this->resetPage();
             $this->runQueryBuilder();
         }
 

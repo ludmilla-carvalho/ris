@@ -50,7 +50,7 @@ class Kid extends Component
                 $this->letter = null;
                 $this->performers = [];
             }
-
+            $this->resetPage();
             $this->runQueryBuilder();
         }
 
